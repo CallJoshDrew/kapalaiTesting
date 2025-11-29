@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 218 100% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 218 100% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 100% 8%;
+
+    --primary: 194 100% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 193 100% 96%;
+    --secondary-foreground: 218 100% 8%;
+
+    --muted: 193 50% 95%;
+    --muted-foreground: 218 25% 45%;
+
+    --accent: 186 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 193 30% 88%;
+    --input: 193 30% 88%;
+    --ring: 194 100% 28%;
+
+    /* Ocean-inspired design tokens */
+    --ocean-deep: 218 100% 8%;
+    --ocean-primary: 194 100% 28%;
+    --ocean-light: 186 100% 45%;
+    --ocean-aqua: 180 100% 85%;
+    --ocean-pearl: 193 100% 96%;
+    
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-primary)));
+    --gradient-aqua: linear-gradient(180deg, hsl(var(--ocean-light)), hsl(var(--ocean-aqua)));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--ocean-deep) / 0.8), hsl(var(--ocean-primary) / 0.6));
+    
+    /* Luxury accents */
+    --luxury-gold: 45 100% 72%;
+    --luxury-bronze: 30 80% 60%;
+    
+    /* Shadows */
+    --shadow-ocean: 0 25px 50px -12px hsl(var(--ocean-primary) / 0.25);
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--ocean-deep) / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--ocean-light) / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 218 100% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 218 90% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 218 90% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 186 100% 45%;
+    --primary-foreground: 218 100% 8%;
+
+    --secondary: 218 50% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 218 50% 15%;
+    --muted-foreground: 218 20% 65%;
+
+    --accent: 194 100% 28%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 218 30% 20%;
+    --input: 218 30% 20%;
+    --ring: 186 100% 45%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .ocean-gradient {
+    background: var(--gradient-ocean);
+  }
+  
+  .aqua-gradient {
+    background: var(--gradient-aqua);
+  }
+  
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+  
+  .ocean-shadow {
+    box-shadow: var(--shadow-ocean);
+  }
+  
+  .elegant-shadow {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+  
+  .bounce-transition {
+    transition: var(--transition-bounce);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Animation delays */
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes progress-fill {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .animate-\[progress-fill_3s_linear_forwards\] {
+    animation: progress-fill 3s linear forwards;
+  }
+}
