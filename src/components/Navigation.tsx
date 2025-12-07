@@ -91,7 +91,10 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex">
+            <button onClick={toggleLanguage} className="py-2 px-4 bg-[#006e8f] text-xs text-white rounded-sm">
+              {isEnglish ? "ENG" : "中文"}
+            </button>
             <button onClick={() => setIsOpen(!isOpen)} className="text-ocean-deep hover:text-ocean-primary p-2">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
