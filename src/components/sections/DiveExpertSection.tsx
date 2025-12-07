@@ -4,28 +4,27 @@ import { ChevronLeft, ChevronRight, Waves } from "lucide-react";
 import underwaterImage from "@/assets/underwater-diving.jpg";
 import marineLifeImage from "@/assets/marine-life.jpg";
 import couplesUnderwaterImage from "@/assets/couples-underwater-exploration.jpg";
+import { useTranslation } from "react-i18next";
 
 const DiveExpertSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const { t } = useTranslation();
 
-  const slides = [
-    {
-      image: underwaterImage,
-      title: "Amazing Underwater Views",
-      description: "Discover the breathtaking beauty beneath the surface",
-    },
-    {
-      image: marineLifeImage,
-      title: "Vibrant Marine Life",
-      description: "Encounter diverse species in their natural habitat",
-    },
-    {
-      image: couplesUnderwaterImage,
-      title: "Shared Adventures",
-      description: "Create unforgettable memories together",
-    },
-  ];
+  // static images in the same order as translations
+  const images = [underwaterImage, marineLifeImage, couplesUnderwaterImage];
+
+  // load slide content from translations (returnObjects for arrays)
+  const slideData = t("dive.slides", { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+  }>;
+
+  // merge images into slides
+  const slides = slideData.map((s, idx) => ({
+    ...s,
+    image: images[idx] ?? images[0],
+  }));
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -55,6 +54,9 @@ const DiveExpertSection = () => {
     return () => clearInterval(interval);
   }, [nextSlide]);
 
+  // title may include line breaks (\n) in translations
+  const title = t("dive.title");
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Carousel Background */}
@@ -71,20 +73,22 @@ const DiveExpertSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="flex items-center justify-center mb-6">
           <Waves className="w-6 h-6 mr-3 text-ocean-aqua" />
-          <span className="text-ocean-aqua font-medium text-lg">Dive Experts</span>
+          <span className="text-ocean-aqua font-medium text-lg">{t("dive.label")}</span>
         </div>
 
         <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          Not Just Depth
-          <span className="hidden md:inline">—</span>
-          <br />
-          <span className="text-ocean-aqua">A Rediscovery of the Ocean's Pulse</span>
+          {title.split("\n").map((line, i) => (
+            <span key={i}>
+              {line}
+              {i < title.split("\n").length - 1 && <br />}
+            </span>
+          ))}
+          <span className="text-ocean-aqua block md:inline">{t("dive.highlight")}</span>
         </h2>
 
-        <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto px-4 md:px-32 leading-relaxed">Every dive is a journey of discovery, where the depths reveal their most guarded secrets.</p>
-        {/* <Button variant="accent" size="lg" className="text-lg px-8 py-6" onClick={handleManualNext}>
-          Next
-        </Button> */}
+        <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto px-4 md:px-32 leading-relaxed">
+          {slides[currentSlide].description}
+        </p>
       </div>
 
       {/* Animated Progress Bar */}

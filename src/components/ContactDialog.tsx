@@ -10,6 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { format } from "date-fns";
 import { CalendarIcon, Phone, Mail, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 
 interface ContactDialogProps {
@@ -43,6 +44,7 @@ const roomOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "1
 const diverOptions = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20+"];
 
 const ContactDialog = ({ children }: ContactDialogProps) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     fullName: "",
     alias: "",
@@ -66,7 +68,7 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
     // Validation for required fields (arrivalDate is now optional)
     if (!formData.fullName || !formData.email || !formData.contactNumber || !formData.nationality || !formData.departureDate || !formData.numberOfRooms || !formData.numberOfDivers || !formData.numberOfNonDivers) {
       toast({
-        title: "Please fill in all required fields",
+        title: t("contact.validation_error"),
         variant: "destructive",
       });
       return;
@@ -75,39 +77,39 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
     // Check if departure date is after arrival date only when both provided
     if (formData.arrivalDate && formData.departureDate && formData.departureDate <= formData.arrivalDate) {
       toast({
-        title: "Departure date must be after arrival date",
+        title: t("contact.date_error"),
         variant: "destructive",
       });
       return;
     }
 
     // Create email content for mailto:
-    const arrivalText = formData.arrivalDate ? format(formData.arrivalDate, "PPPP") : "Not provided";
-    const departureText = formData.departureDate ? format(formData.departureDate, "PPPP") : "Not provided";
+    const arrivalText = formData.arrivalDate ? format(formData.arrivalDate, "PPPP") : t("contact.not_provided");
+    const departureText = formData.departureDate ? format(formData.departureDate, "PPPP") : t("contact.not_provided");
 
-    const subject = `Booking Inquiry from ${formData.fullName}`;
+    const subject = `${t("contact.booking_inquiry")} - ${formData.fullName}`;
     const emailBody = `
-BOOKING INQUIRY - Sipadan Kapalai Dive Resort
+${t("contact.email_header")}
 
-PERSONAL INFORMATION:
-• Full Name: ${formData.fullName}
-• Alias: ${formData.alias || "Not provided"}
-• Email: ${formData.email}
-• Nationality: ${formData.nationality}
-• Contact Number: ${formData.countryCode} ${formData.contactNumber}
+${t("contact.section_personal")}
+• ${t("contact.form_full_name")}: ${formData.fullName}
+• ${t("contact.form_alias")}: ${formData.alias || t("contact.not_provided")}
+• ${t("contact.form_email")}: ${formData.email}
+• ${t("contact.form_nationality")}: ${formData.nationality}
+• ${t("contact.form_contact")}: ${formData.countryCode} ${formData.contactNumber}
 
-BOOKING DETAILS:
-• Arrival Date: ${arrivalText}
-• Departure Date: ${departureText}
-• Number of Rooms: ${formData.numberOfRooms}
-• Number of Divers: ${formData.numberOfDivers}
-• Number of Non-divers: ${formData.numberOfNonDivers}
+${t("contact.section_booking")}
+• ${t("contact.form_arrival")}: ${arrivalText}
+• ${t("contact.form_departure")}: ${departureText}
+• ${t("contact.form_rooms")}: ${formData.numberOfRooms}
+• ${t("contact.form_divers")}: ${formData.numberOfDivers}
+• ${t("contact.form_non_divers")}: ${formData.numberOfNonDivers}
 
-SPECIAL REQUIREMENTS:
-${formData.specialRequirements || "None"}
+${t("contact.section_requirements")}
+${formData.specialRequirements || t("contact.none")}
 
 ---
-This inquiry was submitted via the website on ${new Date().toLocaleString()}
+${t("contact.email_footer")} ${new Date().toLocaleString()}
     `.trim();
 
     // Create mailto link
@@ -118,27 +120,9 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
 
     // Show success message
     toast({
-      title: "Email client opened!",
-      description: "Please review and send the pre-filled email to complete your booking inquiry.",
+      title: t("contact.success_title"),
+      description: t("contact.success_description"),
     });
-
-    // Optional: Reset form and close dialog
-    // You might want to keep the form open so users can reference it
-    // setFormData({
-    //   fullName: "",
-    //   alias: "",
-    //   email: "",
-    //   nationality: "",
-    //   countryCode: "+60",
-    //   contactNumber: "",
-    //   arrivalDate: undefined,
-    //   departureDate: undefined,
-    //   numberOfRooms: "",
-    //   numberOfDivers: "",
-    //   numberOfNonDivers: "",
-    //   specialRequirements: "",
-    // });
-    // setIsOpen(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -167,53 +151,37 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-ocean-deep text-left">Booking Inquiry</DialogTitle>
-          <DialogDescription className="text-left">Get in touch with us for reservations or inquiries about your dream vacation. Your inquiry will be sent via email.</DialogDescription>
+          <DialogTitle className="text-ocean-deep text-left">{t("contact.title")}</DialogTitle>
+          <DialogDescription className="text-left">{t("contact.description")}</DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6">
-          {/* Contact Info */}
-          {/* <div className="bg-ocean-light/10 rounded-lg p-4 space-y-3">
-            <div className="flex items-center space-x-3">
-              <Phone className="w-4 h-4 text-ocean-primary" />
-              <span className="text-sm">+60 89-781-378</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Mail className="w-4 h-4 text-ocean-primary" />
-              <span className="text-sm">info@sipadan-kapalai.com</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <MapPin className="w-4 h-4 text-ocean-primary" />
-              <span className="text-sm">Semporna, Sabah, Malaysia</span>
-            </div>
-          </div> */}
-
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Full Name and Alias */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="fullName">Full Name (As Per ID/Passport) *</Label>
-                <Input id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="As shown on your passport" required />
+                <Label htmlFor="fullName">{t("contact.form_full_name")} *</Label>
+                <Input id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} placeholder={t("contact.placeholder_full_name")} required />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="alias">Alias</Label>
-                <Input id="alias" name="alias" value={formData.alias} onChange={handleChange} placeholder="Preferred name (optional)" />
+                <Label htmlFor="alias">{t("contact.form_alias")}</Label>
+                <Input id="alias" name="alias" value={formData.alias} onChange={handleChange} placeholder={t("contact.placeholder_alias")} />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Email */}
               <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
+                <Label htmlFor="email">{t("contact.form_email")} *</Label>
                 <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required />
               </div>
               {/* Nationality */}
               <div className="space-y-2">
-                <Label htmlFor="nationality">Nationality *</Label>
+                <Label htmlFor="nationality">{t("contact.form_nationality")} *</Label>
                 <Select value={formData.nationality} onValueChange={(value) => handleSelectChange("nationality", value)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select your nationality" />
+                    <SelectValue placeholder={t("contact.placeholder_nationality")} />
                   </SelectTrigger>
                   <SelectContent>
                     {nationalities.map((nationality) => (
@@ -229,10 +197,10 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
             {/* Contact Number with Country Code */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="countryCode">Country Code *</Label>
+                <Label htmlFor="countryCode">{t("contact.form_country_code")} *</Label>
                 <Select value={formData.countryCode} onValueChange={(value) => handleSelectChange("countryCode", value)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select code" />
+                    <SelectValue placeholder={t("contact.placeholder_code")} />
                   </SelectTrigger>
                   <SelectContent>
                     {countryCodes.map((country) => (
@@ -244,20 +212,20 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="contactNumber">Contact Number *</Label>
-                <Input id="contactNumber" name="contactNumber" value={formData.contactNumber} onChange={handleChange} placeholder="Phone number" required />
+                <Label htmlFor="contactNumber">{t("contact.form_contact")} *</Label>
+                <Input id="contactNumber" name="contactNumber" value={formData.contactNumber} onChange={handleChange} placeholder={t("contact.placeholder_contact")} required />
               </div>
             </div>
 
             {/* Arrival and Departure Dates */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label>Arrival Date</Label> {/* removed required asterisk */}
+                <Label>{t("contact.form_arrival")}</Label>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button variant="outline" className={cn("w-full justify-start text-left font-normal", !formData.arrivalDate && "text-muted-foreground")}>
                       <CalendarIcon className="mr-2 h-4 w-4" />
-                      {formData.arrivalDate ? format(formData.arrivalDate, "PPP") : <span>Pick a date</span>}
+                      {formData.arrivalDate ? format(formData.arrivalDate, "PPP") : <span>{t("contact.placeholder_date")}</span>}
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0">
@@ -266,12 +234,12 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
                 </Popover>
               </div>
               <div className="space-y-2">
-                <Label>Departure Date *</Label>
+                <Label>{t("contact.form_departure")} *</Label>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button variant="outline" className={cn("w-full justify-start text-left font-normal", !formData.departureDate && "text-muted-foreground")}>
                       <CalendarIcon className="mr-2 h-4 w-4" />
-                      {formData.departureDate ? format(formData.departureDate, "PPP") : <span>Pick a date</span>}
+                      {formData.departureDate ? format(formData.departureDate, "PPP") : <span>{t("contact.placeholder_date")}</span>}
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0">
@@ -284,10 +252,10 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
             {/* Room and Guest Numbers */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="numberOfRooms">Number of Rooms *</Label>
+                <Label htmlFor="numberOfRooms">{t("contact.form_rooms")} *</Label>
                 <Select value={formData.numberOfRooms} onValueChange={(value) => handleSelectChange("numberOfRooms", value)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select" />
+                    <SelectValue placeholder={t("contact.placeholder_select")} />
                   </SelectTrigger>
                   <SelectContent>
                     {roomOptions.map((rooms) => (
@@ -299,10 +267,10 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="numberOfDivers">Number of Divers *</Label>
+                <Label htmlFor="numberOfDivers">{t("contact.form_divers")} *</Label>
                 <Select value={formData.numberOfDivers} onValueChange={(value) => handleSelectChange("numberOfDivers", value)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select" />
+                    <SelectValue placeholder={t("contact.placeholder_select")} />
                   </SelectTrigger>
                   <SelectContent>
                     {diverOptions.map((divers) => (
@@ -314,10 +282,10 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="numberOfNonDivers">Number of Non-divers *</Label>
+                <Label htmlFor="numberOfNonDivers">{t("contact.form_non_divers")} *</Label>
                 <Select value={formData.numberOfNonDivers} onValueChange={(value) => handleSelectChange("numberOfNonDivers", value)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select" />
+                    <SelectValue placeholder={t("contact.placeholder_select")} />
                   </SelectTrigger>
                   <SelectContent>
                     {diverOptions.map((nonDivers) => (
@@ -332,20 +300,20 @@ This inquiry was submitted via the website on ${new Date().toLocaleString()}
 
             {/* Special Requirements */}
             <div className="space-y-2">
-              <Label htmlFor="specialRequirements">Special Requirements</Label>
-              <Textarea id="specialRequirements" name="specialRequirements" value={formData.specialRequirements} onChange={handleChange} placeholder="Any special requirements, dietary restrictions, or additional information..." rows={3} />
+              <Label htmlFor="specialRequirements">{t("contact.form_special_requirements")}</Label>
+              <Textarea id="specialRequirements" name="specialRequirements" value={formData.specialRequirements} onChange={handleChange} placeholder={t("contact.placeholder_requirements")} rows={3} />
             </div>
 
             <Button type="submit" className="w-full bg-ocean-primary/80 text-white hover:bg-ocean-primary">
               <Send className="w-4 h-4 mr-2" />
-              Open Email to Send Inquiry
+              {t("contact.button_submit")}
             </Button>
           </form>
 
           {/* Help Text */}
           <div className="text-sm text-muted-foreground text-left">
-            <p>After clicking the button, your email client will open with a pre-filled message.</p>
-            <p>Please review and click "Send" to complete your booking inquiry.</p>
+            <p>{t("contact.help_text_1")}</p>
+            <p>{t("contact.help_text_2")}</p>
           </div>
         </div>
       </DialogContent>

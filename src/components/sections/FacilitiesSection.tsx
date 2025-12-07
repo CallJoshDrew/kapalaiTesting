@@ -12,6 +12,7 @@ import housekeepingViewImage from "@/assets/room/kapalaiHousekeeping.png";
 import privacyImage from "@/assets/facility-images/privacy.png";
 import pristineImage from "@/assets/facility-images/pristineEnvironment.jpg";
 import safetyImage from "@/assets/facility-images/securityKapalai.png";
+import { useTranslation } from "react-i18next";
 
 const RoomCarouselDots = ({ roomImages }) => {
   const { api } = useCarousel();
@@ -42,54 +43,71 @@ const RoomCarouselDots = ({ roomImages }) => {
 };
 
 const FacilitiesSection = () => {
+  const { t } = useTranslation();
   const [isRoomGalleryOpen, setIsRoomGalleryOpen] = useState(false);
   const [selectedFacility, setSelectedFacility] = useState<string | null>(null);
 
+  // Load facilities from translations
+  const facilitiesData = t("facilities.items", { returnObjects: true }) as Array<{
+    title: string;
+    highlight: string;
+  }>;
+
   const facilities = [
     {
+      id: "privacy",
       icon: Lock,
-      title: "Privacy",
-      highlight: "Private Resort",
-      image: privacyImage, // import this at the top
+      title: facilitiesData?.[0]?.title ?? "Privacy",
+      highlight: facilitiesData?.[0]?.highlight ?? "Private Resort",
+      image: privacyImage,
     },
     {
+      id: "pristine",
       icon: Sofa,
-      title: "Pristine Environment",
-      highlight: "Pure Nature",
+      title: facilitiesData?.[1]?.title ?? "Pristine Environment",
+      highlight: facilitiesData?.[1]?.highlight ?? "Pure Nature",
       image: pristineImage,
     },
     {
+      id: "safety",
       icon: Shield,
-      title: "Safety",
-      highlight: "24/7 Security",
+      title: facilitiesData?.[2]?.title ?? "Safety",
+      highlight: facilitiesData?.[2]?.highlight ?? "24/7 Security",
       image: safetyImage,
     },
   ];
+
+  // Load room images from translations
+  const roomImagesData = t("facilities.rooms", { returnObjects: true }) as Array<{
+    title: string;
+    alt: string;
+  }>;
+
   const roomImages = [
     {
       image: exteriorViewImage,
-      alt: "Our Water Chalet seen from the walkway, blending traditional design with the vibrant marine setting",
-      title: "Water Chalet Exterior",
+      alt: roomImagesData?.[0]?.alt ?? "Our Water Chalet seen from the walkway, blending traditional design with the vibrant marine setting",
+      title: roomImagesData?.[0]?.title ?? "Water Chalet Exterior",
     },
     {
       image: innerViewImage,
-      alt: "Room Comfort and Ocean View",
-      title: "Water Chalet Interior",
+      alt: roomImagesData?.[1]?.alt ?? "Room Comfort and Ocean View",
+      title: roomImagesData?.[1]?.title ?? "Water Chalet Interior",
     },
     {
       image: balconyViewImage,
-      alt: "Enjoy panoramic ocean views",
-      title: "Balcony View",
+      alt: roomImagesData?.[2]?.alt ?? "Enjoy panoramic ocean views",
+      title: roomImagesData?.[2]?.title ?? "Balcony View",
     },
     {
       image: oceanParadiseViewImage,
-      alt: "Enjoy our peaceful and steady architecture that blends with the nature",
-      title: "Ocean Paradise",
+      alt: roomImagesData?.[3]?.alt ?? "Enjoy our peaceful and steady architecture that blends with the nature",
+      title: roomImagesData?.[3]?.title ?? "Ocean Paradise",
     },
     {
       image: housekeepingViewImage,
-      alt: "Kapalai Resort Housekeeping Services",
-      title: "Kapalai Housekeeping",
+      alt: roomImagesData?.[4]?.alt ?? "Kapalai Resort Housekeeping Services",
+      title: roomImagesData?.[4]?.title ?? "Kapalai Housekeeping",
     },
   ];
 
@@ -99,10 +117,10 @@ const FacilitiesSection = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <Heart className="w-6 h-6 mr-3 text-ocean-primary" />
-            <span className="text-ocean-primary font-medium text-lg">Peace of Mind</span>
+            <span className="text-ocean-primary font-medium text-lg">{t("facilities.label")}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-ocean-deep mb-6">Expertly Crafted and Maintained</h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-2 md:px-14">Every facility is designed and maintained to ensure your complete focus remains on enjoying time together</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-ocean-deep mb-6">{t("facilities.heading")}</h2>
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-2 md:px-14">{t("facilities.subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -111,21 +129,17 @@ const FacilitiesSection = () => {
               key={index}
               className="group bg-card rounded-2xl p-6 elegant-shadow smooth-transition hover:ocean-shadow hover:scale-105 cursor-pointer"
               onClick={() => {
-                console.log("Facility clicked:", facility.title);
-                setSelectedFacility(facility.title);
+                setSelectedFacility(facility.id);
               }}>
               <div className="flex items-center">
-                {/* Facility image - 1/3 width */}
                 <div className="basis-1/3 flex-shrink-0">
                   <img src={facility.image} alt={`${facility.title} facility`} className="w-full aspect-square object-cover rounded-[10px]" />
                 </div>
-                {/* Icon, title, highlight - 2/3 width */}
                 <div className="basis-2/3 flex flex-col pl-4">
                   <div className="flex items-center mb-2">
                     <div className="inline-flex items-center justify-center w-10 h-10 rounded-full ocean-gradient mr-3 flex-shrink-0">
                       <facility.icon className="w-6 h-6 text-white" />
                     </div>
-
                     <div className="inline-block bg-ocean-light/20 text-ocean-primary px-3 py-1 rounded-full text-sm font-medium">{facility.highlight}</div>
                   </div>
                   <h3 className="text-2xl font-bold text-ocean-deep">{facility.title}</h3>
@@ -139,17 +153,17 @@ const FacilitiesSection = () => {
         <div className="flex justify-center mt-16 pt-16 border-t border-ocean-aqua/20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-11/12">
             <div>
-              <h3 className="text-3xl font-bold text-ocean-deep mb-6">Wake Up to Paradise</h3>
-              <p className="text-xl text-muted-foreground mb-8">Every spacious room offers breathtaking sea views and curated amenities for ultimate tranquility and comfort.</p>
+              <h3 className="text-3xl font-bold text-ocean-deep mb-6">{t("facilities.cta_heading")}</h3>
+              <p className="text-xl text-muted-foreground mb-8">{t("facilities.cta_subtitle")}</p>
               <Button variant="accent" size="lg" className="text-lg px-8 py-6" onClick={() => setIsRoomGalleryOpen(true)}>
-                Our Room
+                {t("facilities.cta_button")}
               </Button>
             </div>
             <div className="relative">
               <Carousel
                 className="w-full"
                 autoplay={true}
-                autoplayInterval={2000} // 2 seconds
+                autoplayInterval={2000}
                 opts={{
                   loop: true,
                 }}>
@@ -178,7 +192,6 @@ const FacilitiesSection = () => {
         facility={selectedFacility || ""}
         isOpen={!!selectedFacility}
         onClose={() => {
-          console.log("Closing popup");
           setSelectedFacility(null);
         }}
       />

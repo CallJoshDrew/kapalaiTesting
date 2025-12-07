@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, useCarousel } from "@/components/ui/carousel";
 import FoodGallery from "@/components/FoodGallery";
 import ServiceGallery from "@/components/ServiceGallery";
+import { useTranslation } from "react-i18next";
 import seamlessJourneysImage from "@/assets/service-galleries/seamless-journeys/seemless_journey.png";
-// import culinaryExcellenceImage from "@/assets/culinary-excellence.jpg";
-// import medicalAssistanceImage from "@/assets/medical-assistance.jpg";
 import tailoredExperiencesImage from "@/assets/tailored-experiences.jpg";
 import bbqImage from "@/assets/service-galleries/bbq.png";
 import buffetStyleImage from "@/assets/service-galleries/buffetStyle.png";
@@ -42,30 +41,41 @@ const FoodCarouselDots = ({ foodImages }) => {
   );
 };
 
-// Services section component with food gallery
 const ServicesSection = () => {
+  const { t } = useTranslation();
   const [isFoodGalleryOpen, setIsFoodGalleryOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
+  const foodImagesData = t("services.food.items", { returnObjects: true }) as Array<{
+    title: string;
+  }>;
+
   const foodImages = [
-    { image: bbqImage, title: "BBQ Night" },
-    { image: buffetStyleImage, title: "Buffet Style" },
-    { image: familyDiningImage, title: "Family Dinner" },
-    { image: kapalaiChiefImage, title: "Kapalai Chefs" },
-    { image: serviceStaffImage, title: "Service Staff" },
+    { image: bbqImage, title: foodImagesData?.[0]?.title ?? "BBQ Night" },
+    { image: buffetStyleImage, title: foodImagesData?.[1]?.title ?? "Buffet Style" },
+    { image: familyDiningImage, title: foodImagesData?.[2]?.title ?? "Family Dinner" },
+    { image: kapalaiChiefImage, title: foodImagesData?.[3]?.title ?? "Kapalai Chefs" },
+    { image: serviceStaffImage, title: foodImagesData?.[4]?.title ?? "Service Staff" },
   ];
+
+  const servicesData = t("services.items", { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+  }>;
 
   const services = [
     {
+      id: "seamless-journeys",
       icon: Plane,
-      title: "Seamless Journeys",
-      description: "Effortless transfers from airport to your great holiday.",
+      title: servicesData?.[0]?.title ?? "Seamless Journeys",
+      description: servicesData?.[0]?.description ?? "Effortless transfers from airport to your great holiday.",
       image: seamlessJourneysImage,
     },
     {
+      id: "tailored-experiences",
       icon: Settings,
-      title: "Tailored Experiences",
-      description: "Personalized service crafted to exceed your expectation.",
+      title: servicesData?.[1]?.title ?? "Tailored Experiences",
+      description: servicesData?.[1]?.description ?? "Personalized service crafted to exceed your expectation.",
       image: tailoredExperiencesImage,
     },
   ];
@@ -76,17 +86,16 @@ const ServicesSection = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <Sparkles className="w-6 h-6 mr-3 text-ocean-aqua" />
-            <span className="text-ocean-aqua font-medium text-lg">Excellent Services</span>
+            <span className="text-ocean-aqua font-medium text-lg">{t("services.label")}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Timeless Hospitality</h2>
-          <p className="text-xl text-ocean-aqua max-w-4xl mx-auto leading-relaxed">We create seamless vacations, with every moment meticulously planned after three decades of perfecting our craft.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t("services.heading")}</h2>
+          <p className="text-xl text-ocean-aqua max-w-4xl mx-auto leading-relaxed">{t("services.subtitle")}</p>
         </div>
 
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-11/12">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden smooth-transition hover:scale-105 group cursor-pointer shadow-lg relative" onClick={() => setSelectedService(service.title)}>
-                {/* Icon positioned over image */}
+              <div key={index} className="bg-white rounded-2xl overflow-hidden smooth-transition hover:scale-105 group cursor-pointer shadow-lg relative" onClick={() => setSelectedService(service.id)}>
                 <div className="absolute top-6 left-6 z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-ocean-deep shadow-lg">
                     <service.icon className="w-6 h-6 text-white ml-0.5 mt-0.5" />
@@ -94,11 +103,9 @@ const ServicesSection = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center">
-                  {/* Image */}
                   <div className="w-full md:w-1/2 p-4 pt-4 md:pt-4">
                     <img src={service.image} alt={`${service.title} service`} className="w-full h-48 object-cover rounded-xl" />
                   </div>
-                  {/* Content */}
                   <div className="w-full md:w-1/2 px-4 pb-4 text-left">
                     <h3 className="text-[27px] font-bold mb-1 text-ocean-deep">{service.title}</h3>
                     <p className="text-[17px] text-black leading-relaxed">{service.description}</p>
@@ -113,17 +120,17 @@ const ServicesSection = () => {
         <div className="flex justify-center mt-16 pt-16 border-t border-ocean-aqua/20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-11/12">
             <div>
-              <h3 className="text-3xl font-bold text-white mb-6">Food for All Ages</h3>
-              <p className="text-xl text-ocean-pearl mb-8 leading-relaxed">Where every family finds its feast with diverse menus designed for all generations.</p>
+              <h3 className="text-3xl font-bold text-white mb-6">{t("services.food.heading")}</h3>
+              <p className="text-xl text-ocean-pearl mb-8 leading-relaxed">{t("services.food.subtitle")}</p>
               <Button variant="accent" size="lg" className="text-lg px-8 py-6" onClick={() => setIsFoodGalleryOpen(true)}>
-                Our Food
+                {t("services.food.button")}
               </Button>
             </div>
             <div className="relative">
               <Carousel
                 className="w-full"
                 autoplay={true}
-                autoplayInterval={2000} // 2 seconds
+                autoplayInterval={2000}
                 opts={{
                   loop: true,
                 }}>
@@ -146,10 +153,7 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      {/* Food Gallery Modal */}
       <FoodGallery isOpen={isFoodGalleryOpen} onClose={() => setIsFoodGalleryOpen(false)} />
-
-      {/* Service Gallery Modal */}
       <ServiceGallery service={selectedService || ""} isOpen={!!selectedService} onClose={() => setSelectedService(null)} />
     </section>
   );

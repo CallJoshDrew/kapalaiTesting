@@ -1,0 +1,574 @@
+{
+  "en": {
+    "translation": {
+      "nav": {
+        "home": "Home",
+        "awards": "Awards",
+        "diving": "Diving",
+        "holidays": "Holidays",
+        "services": "Services",
+        "facilities": "Facilities",
+        "reviews": "Reviews",
+        "enquiry": "Enquiry"
+      },
+      "awards": {
+        "heading": "35 Years of Service",
+        "subtitle": "Three decades of prestigious recognition and unwavering commitment.",
+        "items": [
+          { "title": "TripAdvisor Hall of Fame", "description": "Certificate of Excellence", "year": "2018" },
+          { "title": "Sabah Tourism Award", "description": "Excellence in Hotel Services", "year": "2019" },
+          { "title": "Sabah Top Achievers", "description": "Outstanding Performance", "year": "2024" }
+        ]
+      },
+      "dive": {
+        "label": "Dive Experts",
+        "title": "Not Just Depth\n",
+        "highlight": "A Rediscovery of the Ocean's Pulse",
+        "slides": [
+          { "title": "Amazing Underwater Views", "description": "Discover the breathtaking beauty beneath the surface" },
+          { "title": "Vibrant Marine Life", "description": "Encounter diverse species in their natural habitat" },
+          { "title": "Shared Adventures", "description": "Create unforgettable memories together" }
+        ]
+      },
+      "holidays": {
+        "heading": "Memorable Holidays",
+        "intro": "A great holidays is to share moments and truly connect with loved ones that last a lifetime.",
+        "next": "Next",
+        "slides": [{ "caption": "Creating precious memories on pristine beaches" }, { "caption": "Expert diving adventures exploring vibrant marine life" }, { "caption": "Finding perfect moments of tranquility" }, { "caption": "Sharing stories under endless skies" }, { "caption": "Watching nature's daily masterpiece unfold" }]
+      },
+      "activities": {
+        "label": "Amazing Activities",
+        "heading": "Encounters of Discovery",
+        "subtitle": "Discover endless adventures both above and below the surface",
+        "items": [{ "title": "Diving" }, { "title": "Kayaking" }, { "title": "Snorkeling" }, { "title": "Cycling" }, { "title": "Nature Observation & Relaxation" }]
+      },
+      "services": {
+        "label": "Excellent Services",
+        "heading": "Timeless Hospitality",
+        "subtitle": "We create seamless vacations, with every moment meticulously planned after three decades of perfecting our craft.",
+        "items": [
+          { "title": "Seamless Journeys", "description": "Effortless transfers from airport to your great holiday." },
+          { "title": "Tailored Experiences", "description": "Personalized service crafted to exceed your expectation." }
+        ],
+        "gallery": {
+          "seamless-journeys": [
+            { "title": "Airport Pickup", "alt": "Professional airport pickup service for resort guests" },
+            { "title": "Semporna Jetty", "alt": "Guests arriving at Semporna Kapalai Jetty" },
+            { "title": "Kapalai Arrival", "alt": "Speedboat transfer to Sipadan Kapalai Resort" }
+          ],
+          "tailored-experiences": [
+            { "title": "Romantic Dinner", "alt": "Romantic candlelit dinner on the beach at sunset" },
+            { "title": "Special Arrangement", "alt": "Special arrangement for the perfect meals with your love ones" },
+            { "title": "Honeymoon", "alt": "A honeymoon bed decorated with towel swans and flowers" }
+          ]
+        },
+        "food": {
+          "heading": "Food for All Ages",
+          "subtitle": "Where every family finds its feast with diverse menus designed for all generations.",
+          "button": "Our Food",
+          "gallery_heading": "Our Food Gallery",
+          "gallery_button": "Next",
+          "items": [{ "title": "BBQ Night" }, { "title": "Buffet Style" }, { "title": "Family Dinner" }, { "title": "Kapalai Chefs" }, { "title": "Service Staff" }],
+          "gallery": [
+            { "alt": "Asian Delights Sampler", "title": "Asian Delights" },
+            { "alt": "Chicken Cheese Combo", "title": "Chicken Cheese" },
+            { "alt": "Seafood Alfredo", "title": "Seafood Alfredo" },
+            { "alt": "Spicy Stir-Fry Crab", "title": "Spicy Stir-Fry Crab" },
+            { "alt": "Crispy Asian Glazed Wings", "title": "Glazed Wings" },
+            { "alt": "Grilled Satay Skewers with Spicy Rice Cakes", "title": "Satay Skewers" },
+            { "alt": "BBQ Roast Shank", "title": "Roast Shank" },
+            { "alt": "Greek Salad", "title": "Greek Salad" },
+            { "alt": "Sweet Island Bites", "title": "Island Bites" },
+            { "alt": "Four Seasons Dessert Plate", "title": "Four Seasons Dessert" }
+          ]
+        }
+      },
+      "facilities": {
+        "label": "Peace of Mind",
+        "heading": "Expertly Crafted and Maintained",
+        "subtitle": "Every facility is designed and maintained to ensure your complete focus remains on enjoying time together",
+        "items": [
+          { "title": "Privacy", "highlight": "Private Resort" },
+          { "title": "Pristine Environment", "highlight": "Pure Nature" },
+          { "title": "Safety", "highlight": "24/7 Security" }
+        ],
+        "cta_heading": "Wake Up to Paradise",
+        "cta_subtitle": "Every spacious room offers breathtaking sea views and curated amenities for ultimate tranquility and comfort.",
+        "cta_button": "Our Room",
+        "gallery_heading": "Our Room Gallery",
+        "gallery_next": "Next",
+        "rooms": [
+          { "title": "Water Chalet Exterior", "alt": "Our Water Chalet seen from the walkway, blending traditional design with the vibrant marine setting" },
+          { "title": "Water Chalet Interior", "alt": "Room Comfort and Ocean View" },
+          { "title": "Balcony View", "alt": "Enjoy panoramic ocean views" },
+          { "title": "Ocean Paradise", "alt": "Enjoy our peaceful and steady architecture that blends with the nature" },
+          { "title": "Kapalai Housekeeping", "alt": "Kapalai Resort Housekeeping Services" }
+        ],
+        "room_gallery": [
+          { "title": "Overwater Villa Suite", "alt": "Luxury Overwater Villa Bedroom" },
+          { "title": "Ocean View Bathroom", "alt": "Luxury Bathroom with Ocean View" },
+          { "title": "Spacious Living Area", "alt": "Suite Living Area" },
+          { "title": "Private Ocean Balcony", "alt": "Private Balcony" },
+          { "title": "Twin Bed Configuration", "alt": "Twin Bedroom" },
+          { "title": "In-Room Workspace", "alt": "Workspace Area" },
+          { "title": "Walk-in Closet", "alt": "Dressing Area" },
+          { "title": "Elegant Room Entrance", "alt": "Room Entrance" }
+        ],
+        "descriptions": {
+          "privacy": { "description": "Enjoy a peaceful escape and complete serenity in your interruption-free paradise." },
+          "pristine": { "description": "Experience harmony: Comfort and thoughtful conservation coexist perfectly." },
+          "safety": { "description": "Relax in our secure environment; vigilant safety protocols ensure your peace of mind." }
+        }
+      },
+      "carousel": {
+        "next_button": "Next Review"
+      },
+      "reviews": {
+        "label": "Your Unforgettable",
+        "heading": "Guest Experiences",
+        "subtitle": "See why our guests consistently share outstanding feedback across all platforms.",
+        "booking_description": "Discover Sipadan Kapalai Dive Resort in Semporna, Sabah, Malaysia—a legendary destination above crystal-clear waters, offering world-class diving and three decades of iconic hospitality. Book your unforgettable island escape today!",
+        "booking_button": "Enquiry",
+        "items": [
+          {
+            "name": "Michael M",
+            "platform": "TripAdvisor",
+            "review": "This is our second visit and we love everything about the resort. Staff is great, rooms are really nice and the tub is great for warming up after a dive. The dive center is top notch with great guides (good evening karaoke too!) Food is fine, but could improve.",
+            "rating": 4
+          },
+          {
+            "name": "Rebecca K",
+            "platform": "TripAdvisor",
+            "review": "My expectations were low when booking this due to previous average reviews. But I was pleasantly surprised. This place is stunning! We saw turtles around the overwater villas everyday as well as so many schools of fish. Highly recommend this place!",
+            "rating": 5
+          },
+          {
+            "name": "Chinwong69",
+            "platform": "TripAdvisor",
+            "review": "Stayed at the resort for my dive trip. From pick up at the airport till transfer to the airport on the last day, the service was reasonably good from the different staff. The accomodation was tidy and importantly, well maintained.",
+            "rating": 5
+          },
+          {
+            "name": "Cswanston",
+            "platform": "TripAdvisor",
+            "review": "We had the most amazing 5 days there as a family of 4 with 2 rooms. The place is even more beautiful than the photographs and just strolling along the walkways you see so much wildlife.",
+            "rating": 5
+          },
+          {
+            "name": "Werner G",
+            "platform": "Agoda.com",
+            "review": "A diving resort with great standardized processes. The diving center is super functional with a super friendly team. The artificial house reef is great and there is always something to see. Sleeping comfort in Villa 19 is great. The food is OK and the people are super nice.",
+            "rating": 5
+          },
+          {
+            "name": "Lankylee",
+            "platform": "TripAdvisor",
+            "review": "Perfect place to chill out and dive surroundings. Sipadan is accessible. Resort without diving is already fantastic. It is an unbeatable combination with a well run diving outfit. Rates are cheap considering what you get. There is a marine police at one corner of large resort.",
+            "rating": 5
+          },
+          {
+            "name": "mypassionmyobsession",
+            "platform": "TripAdvisor",
+            "review": "This is heaven on earth. If you're a diver, this is one of the top diving site in the world. Even if you're not, I would highly recommend for you to start taking lesson and get your license. It's worth it! The food is delicious. Bit spicy for those who doesn't take any spice.",
+            "rating": 5
+          },
+          {
+            "name": "Ferry R",
+            "platform": "TripAdvisor",
+            "review": "If diving is your passion then you must have Kapalai in your diving checklist! But if you're not then don't worry because the place also is great for those who wants to escape the hustle and bustle. Spacious room and very serene. The food were great and the staffs are very helpful. Take a break and go Kapalai!",
+            "rating": 5
+          },
+          {
+            "name": "Lee Meng",
+            "platform": "Trip.com",
+            "review": "Had a relaxing 4D3N surrounded with awesome view and lots of turtles and fish could be seen from the chalet. Resort staff are welcoming, approachable and helpful. Food provided was pleasantly prepared. However, the public toilet need thorough cleaning & refurbishment, wifi to be made available, more lighting along all the walkways at night.",
+            "rating": 4
+          },
+          {
+            "name": "Man Chung",
+            "platform": "Trip.com",
+            "review": "The sea was so clear. Sea turtles can be seen from the balcony every night. very nice diving coaches. Highly recommended.",
+            "rating": 4
+          },
+          {
+            "name": "Chiu",
+            "platform": "Trip.com",
+            "review": "Good resort for holiday, highly recommend.I had a very good experience in the resort, clean and safe. Overall is good.",
+            "rating": 5
+          },
+          {
+            "name": "Rachel",
+            "platform": "Agoda.com",
+            "review": "The unique geographical location is unmatched by any other hotel. The room has a terrace where you can soak in the bath, view the sea, and daydream. The environment is truly perfect; those who love the sea will adore it.",
+            "rating": 4
+          },
+          {
+            "name": "Mohd Lutfi",
+            "platform": "Google Review",
+            "review": "Room - spacious., have 1 queen size & 1 single for std room Food - a lots. One of the chalet that provide lots of food. View - masha ALLAH... So beautiful Safety - have esscom that patrol daily basis of every chalet Looking forward to come again",
+            "rating": 5
+          },
+          {
+            "name": "KSPG",
+            "platform": "Google Review",
+            "review": "Nice environment, extremely clean emeralds colour sea water, though the sandy beach is small but is white beach and good for photo taking. Consider big compound area for visitors to walk around, no daily tourists visit which keep the area with better privacy.",
+            "rating": 5
+          }
+        ]
+      },
+      "contact": {
+        "title": "Booking Inquiry",
+        "description": "Get in touch with us for reservations or inquiries about your dream vacation. Your inquiry will be sent via email.",
+        "form_full_name": "Full Name (As Per ID/Passport)",
+        "form_alias": "Alias",
+        "form_email": "Email",
+        "form_nationality": "Nationality",
+        "form_country_code": "Country Code",
+        "form_contact": "Contact Number",
+        "form_arrival": "Arrival Date",
+        "form_departure": "Departure Date",
+        "form_rooms": "Number of Rooms",
+        "form_divers": "Number of Divers",
+        "form_non_divers": "Number of Non-divers",
+        "form_special_requirements": "Special Requirements",
+        "placeholder_full_name": "As shown on your passport",
+        "placeholder_alias": "Preferred name (optional)",
+        "placeholder_nationality": "Select your nationality",
+        "placeholder_code": "Select code",
+        "placeholder_contact": "Phone number",
+        "placeholder_date": "Pick a date",
+        "placeholder_select": "Select",
+        "placeholder_requirements": "Any special requirements, dietary restrictions, or additional information...",
+        "button_submit": "Open Email to Send Inquiry",
+        "help_text_1": "After clicking the button, your email client will open with a pre-filled message.",
+        "help_text_2": "Please review and click \"Send\" to complete your booking inquiry.",
+        "validation_error": "Please fill in all required fields",
+        "date_error": "Departure date must be after arrival date",
+        "success_title": "Email client opened!",
+        "success_description": "Please review and send the pre-filled email to complete your booking inquiry.",
+        "booking_inquiry": "Booking Inquiry",
+        "email_header": "BOOKING INQUIRY - Sipadan Kapalai Dive Resort",
+        "section_personal": "PERSONAL INFORMATION:",
+        "section_booking": "BOOKING DETAILS:",
+        "section_requirements": "SPECIAL REQUIREMENTS:",
+        "email_footer": "This inquiry was submitted via the website on",
+        "not_provided": "Not provided",
+        "none": "None"
+      },
+      "footer": {
+        "sandakan_office": "Sandakan Office",
+        "sandakan_address": "Ground Floor, Lot 38 & 39, Block C, Bandar Tyng, Mile 5, North Road, PPM 255 Elopura, 90000 Sandakan, Sabah, Malaysia.",
+        "tawau_office": "Tawau Office",
+        "tawau_address": "1st Floor, No. 484, Block P, Bandar Sabindo, P.O Box 61120, 91021 Tawau, Sabah, Malaysia.",
+        "kk_office": "Kota Kinabalu Office",
+        "kk_address": "Block B, 1st Floor, Lot B-1-1, Plaza Tanjung Aru, Jalan Mat Salleh, Tanjung Aru, 88100 Kota Kinabalu, Sabah, Malaysia.",
+        "follow_us": "Follow Us",
+        "follow_description": "Experience the ultimate underwater paradise in the heart of the Semporna, Sabah.",
+        "certifications": "Certifications",
+        "cert_padi": "PADI Dive Resort",
+        "cert_green_fins": "Green Fins Certified",
+        "cert_tripadvisor": "TripAdvisor Hall of Fame",
+        "cert_sabah_achievers": "Sabah Top Achievers",
+        "cert_sabah_tourism": "Sabah Tourism Award",
+        "cert_sabah_association": "Sabah Tourist Association",
+        "copyright": "© 2025 All Rights Reserved."
+      },
+      "sipadan": {
+        "title": "Sipadan Kapalai Dive Resort",
+        "description": "Experience paradise at our exclusive tropical resort. Pristine beaches, crystal-clear waters, and world-class amenities await you in this secluded island sanctuary.",
+        "explore": "Explore"
+      },
+      "pearl": {
+        "title": "Pearl Island Resort",
+        "description": "Located beside Bohey Dulang National Park, this new luxury retreat offers unrivaled access to adventure. Hike for breathtaking panoramic views of the mountains, sea, and sky, then relax in your tropical Semporna haven.",
+        "explore": "Explore"
+      }
+    }
+  },
+  "zh": {
+    "translation": {
+      "nav": {
+        "home": "首页",
+        "awards": "奖项",
+        "diving": "潜水",
+        "holidays": "假期",
+        "services": "服务",
+        "facilities": "设施",
+        "reviews": "评论",
+        "enquiry": "询问"
+      },
+      "awards": {
+        "heading": "35年服务",
+        "subtitle": "三十多年的荣誉与不懈奉献。",
+        "items": [
+          { "title": "猫途鹰名人堂", "description": "卓越证书", "year": "2018" },
+          { "title": "沙巴旅游奖", "description": "酒店服务卓越奖", "year": "2019" },
+          { "title": "沙巴顶尖成就", "description": "杰出表现", "year": "2024" }
+        ]
+      },
+      "dive": {
+        "label": "潜水专家",
+        "title": "不仅仅是深度\n",
+        "highlight": "重新发现海洋的脉动",
+        "slides": [
+          { "title": "惊人的水下景观", "description": "探索水面下令人屏息的美景" },
+          { "title": "充满活力的海洋生物", "description": "在自然栖息地遇见多样的物种" },
+          { "title": "共享冒险", "description": "一起创造难忘的回忆" }
+        ]
+      },
+      "holidays": {
+        "heading": "难忘假期",
+        "intro": "美好的假期是分享美好时刻，与心爱的人建立终生难忘的联系。",
+        "next": "下一页",
+        "slides": [{ "caption": "在洁白的海滩上创造珍贵回忆" }, { "caption": "专家级潜水探险，探索生机勃勃的海洋生物" }, { "caption": "寻找完美宁静的时刻" }, { "caption": "在无尽的天空下分享故事" }, { "caption": "观看大自然每日的杰作徐徐展开" }]
+      },
+      "activities": {
+        "label": "精彩活动",
+        "heading": "发现之旅",
+        "subtitle": "探索水面上下无尽的冒险",
+        "items": [{ "title": "潜水" }, { "title": "皮划艇" }, { "title": "浮潜" }, { "title": "骑行" }, { "title": "自然观察与放松" }]
+      },
+      "services": {
+        "label": "优质服务",
+        "heading": "永恒的热情款待",
+        "subtitle": "我们创造无缝假期，每一刻都经过三十年完善的精心规划。",
+        "items": [
+          { "title": "无缝旅程", "description": "从机场到美好假期的轻松接送。" },
+          { "title": "定制体验", "description": "个性化服务，超越您的期望。" }
+        ],
+        "gallery": {
+          "seamless-journeys": [
+            { "title": "机场接送", "alt": "为度假村客人提供专业的机场接送服务" },
+            { "title": "仙本那码头", "alt": "客人抵达仙本那卡帕莱码头" },
+            { "title": "卡帕莱抵达", "alt": "前往西巴丹卡帕莱度假村的快艇接送" }
+          ],
+          "tailored-experiences": [
+            { "title": "浪漫晚餐", "alt": "日落时分海滩上的浪漫烛光晚餐" },
+            { "title": "特别安排", "alt": "为您和心爱的人精心安排的完美餐饮" },
+            { "title": "蜜月", "alt": "装饰有毛巾天鹅和鲜花的蜜月床" }
+          ]
+        },
+        "food": {
+          "heading": "适合所有年龄的美食",
+          "subtitle": "每个家庭都能在我们为各代人设计的多样化菜单中找到美味。",
+          "button": "我们的美食",
+          "gallery_heading": "我们的美食画廊",
+          "gallery_button": "下一页",
+          "items": [{ "title": "烧烤之夜" }, { "title": "自助餐" }, { "title": "家庭晚餐" }, { "title": "卡帕莱主厨" }, { "title": "服务员" }],
+          "gallery": [
+            { "alt": "亚洲美食拼盘", "title": "亚洲美食" },
+            { "alt": "鸡肉芝士组合", "title": "鸡肉芝士" },
+            { "alt": "海鲜奶油意面", "title": "海鲜奶油意面" },
+            { "alt": "辛辣炒螃蟹", "title": "辛辣炒螃蟹" },
+            { "alt": "脆香亚洲釉鸡翅", "title": "釉鸡翅" },
+            { "alt": "烤沙爹串和辛辣米饼", "title": "沙爹串" },
+            { "alt": "烧烤羊腿", "title": "羊腿" },
+            { "alt": "希腊沙拉", "title": "希腊沙拉" },
+            { "alt": "甜蜜的岛屿小食", "title": "岛屿小食" },
+            { "alt": "四季甜品拼盘", "title": "四季甜品" }
+          ]
+        }
+      },
+      "facilities": {
+        "label": "放心保障",
+        "heading": "精心设计与维护",
+        "subtitle": "每项设施都经过精心设计和维护，确保您可以专注于与亲人享受时光",
+        "items": [
+          { "title": "隐私", "highlight": "私人度假村" },
+          { "title": "原始环境", "highlight": "纯净自然" },
+          { "title": "安全", "highlight": "24小时安保" }
+        ],
+        "cta_heading": "沉醉在天堂般的清晨",
+        "cta_subtitle": "每间宽敞的客房都提供令人惊叹的海景和精选设施，带来终极的宁静和舒适。",
+        "cta_button": "我们的客房",
+        "gallery_heading": "我们的客房画廊",
+        "gallery_next": "下一页",
+        "rooms": [
+          { "title": "水上小屋外观", "alt": "从走道看我们的水上小屋，融合了传统设计和充满活力的海洋环境" },
+          { "title": "水上小屋内部", "alt": "房间舒适和海景" },
+          { "title": "阳台景观", "alt": "享受全景海景" },
+          { "title": "海洋天堂", "alt": "享受我们与自然融合的宁静而稳定的建筑" },
+          { "title": "卡帕莱管理员", "alt": "卡帕莱度假村客房服务" }
+        ],
+        "room_gallery": [
+          { "title": "水上别墅套房", "alt": "豪华水上别墅卧室" },
+          { "title": "海景浴室", "alt": "拥有海景的豪华浴室" },
+          { "title": "宽敞的起居区", "alt": "套房起居区" },
+          { "title": "私人海洋阳台", "alt": "私人阳台" },
+          { "title": "双床配置", "alt": "双床卧室" },
+          { "title": "房间工作区", "alt": "工作区" },
+          { "title": "步入式衣柜", "alt": "试衣间" },
+          { "title": "优雅的房间入口", "alt": "房间入口" }
+        ],
+        "descriptions": {
+          "privacy": { "description": "在您不受打扰的天堂中享受安宁的逃离和完全的宁静。" },
+          "pristine": { "description": "体验和谐：舒适与周到的保护完美共存。" },
+          "safety": { "description": "在我们安全的环境中放松；警惕的安全措施确保您的安心。" }
+        }
+      },
+      "carousel": {
+        "next_button": "下一条评论"
+      },
+      "reviews": {
+        "label": "您的难忘",
+        "heading": "客人体验",
+        "subtitle": "了解为什么我们的客人在所有平台上都一致分享优秀的反馈。",
+        "booking_description": "发现位于沙巴州山打根仙本那的西巴丹卡帕莱潜水度假村——一个位于清澈海水之上的传奇目的地，提供世界一流的潜水和三十年的标志性热情好客。立即预订您难忘的岛屿逃亡之旅！",
+        "booking_button": "查询",
+        "items": [
+          {
+            "name": "Michael M",
+            "platform": "TripAdvisor",
+            "review": "这是我们的第二次访问，我们喜欢度假村的一切。员工很棒，房间真的很不错，浴缸非常适合在潜水后取暖。潜水中心一流，有出色的导游（还有很好的晚间卡拉OK！）食物还不错，但可能会有所改进。",
+            "rating": 4
+          },
+          {
+            "name": "Rebecca K",
+            "platform": "TripAdvisor",
+            "review": "由于之前的普通评论，我对预订时的期望很低。但我惊喜万分。这个地方太棒了！我们每天都在水上别墅周围看到海龟，还有许多鱼群。强烈推荐这个地方！",
+            "rating": 5
+          },
+          {
+            "name": "Chinwong69",
+            "platform": "TripAdvisor",
+            "review": "为我的潜水旅行住在度假村。从机场接送到最后一天的机场转移，来自不同员工的服务相当不错。住宿整洁，重要的是维护良好。",
+            "rating": 5
+          },
+          {
+            "name": "Cswanston",
+            "platform": "TripAdvisor",
+            "review": "我们在那里作为4人家庭的2间房间里度过了最美好的5天。这个地方比照片还要美丽，沿着走道漫步，您会看到很多野生动物。",
+            "rating": 5
+          },
+          {
+            "name": "Werner G",
+            "platform": "Agoda.com",
+            "review": "一个潜水度假村，具有很好的标准化流程。潜水中心超级实用，团队超级友好。人工房屋礁很棒，总是有东西可看。别墅19的睡眠舒适度很好。食物还不错，人们超级友好。",
+            "rating": 5
+          },
+          {
+            "name": "Lankylee",
+            "platform": "TripAdvisor",
+            "review": "在周围放松和潜水的完美地点。西巴丹容易到达。没有潜水的度假村已经很棒了。这是一个无与伦比的组合，拥有一个管理良好的潜水机构。考虑到你得到的东西，费率很便宜。度假村的一个角落里有一支海警。",
+            "rating": 5
+          },
+          {
+            "name": "mypassionmyobsession",
+            "platform": "TripAdvisor",
+            "review": "这是人间天堂。如果您是潜水员，这是世界上顶级潜水地点之一。即使您不是，我也会强烈建议您开始上课并获得执照。这是值得的！食物很美味。对于那些不吃辛辣食物的人来说有点辛辣。",
+            "rating": 5
+          },
+          {
+            "name": "Ferry R",
+            "platform": "TripAdvisor",
+            "review": "如果潜水是您的热情，那么您必须在您的潜水清单中有卡帕莱！但如果您没有，请不要担心，因为这个地方对于那些想逃离喧嚣的人来说也很棒。宽敞的房间和非常宁静。食物很棒，员工非常乐于助人。休息一下，去卡帕莱吧！",
+            "rating": 5
+          },
+          {
+            "name": "Lee Meng",
+            "platform": "Trip.com",
+            "review": "在度假村周围有4天3晚的放松。从小屋可以看到很多海龟和鱼。度假村员工热情、平易近人且乐于助人。提供的食物令人满意。但公共厕所需要彻底清洁和翻新，应提供无线网络，晚上所有走道上应有更多照明。",
+            "rating": 4
+          },
+          {
+            "name": "Man Chung",
+            "platform": "Trip.com",
+            "review": "大海非常清澈。从阳台每晚都能看到海龟。非常好的潜水教练。强烈推荐。",
+            "rating": 4
+          },
+          {
+            "name": "Chiu",
+            "platform": "Trip.com",
+            "review": "假期很好的度假村，强烈推荐。我在度假村有过很好的经历，干净安全。总体来说不错。",
+            "rating": 5
+          },
+          {
+            "name": "Rachel",
+            "platform": "Agoda.com",
+            "review": "独特的地理位置无与伦比。房间里有一个露台，您可以在那里泡澡、观海景和白日梦。环境真的很完美；那些喜欢大海的人会喜欢它。",
+            "rating": 4
+          },
+          {
+            "name": "Mohd Lutfi",
+            "platform": "Google Review",
+            "review": "房间——宽敞。有1张床王和1张单人床标准房间 食物——很多。提供很多食物的小屋之一。景观——太美了！安全——有esscom每天巡逻每个小屋 期待再来",
+            "rating": 5
+          },
+          {
+            "name": "KSPG",
+            "platform": "Google Review",
+            "review": "环境优美，大海颜色干净翠绿，虽然沙滩很小，但是白沙滩，适合拍照。考虑为游客散步的大院落，没有日常游客访问，使该区域拥有更好的隐私。",
+            "rating": 5
+          }
+        ]
+      },
+      "contact": {
+        "title": "预订查询",
+        "description": "与我们联系进行预订或咨询您的梦想假期。您的查询将通过电子邮件发送。",
+        "form_full_name": "全名（按身份证/护照上所示）",
+        "form_alias": "昵称",
+        "form_email": "电子邮件",
+        "form_nationality": "国籍",
+        "form_country_code": "国家代码",
+        "form_contact": "联系电话",
+        "form_arrival": "抵达日期",
+        "form_departure": "离开日期",
+        "form_rooms": "房间数量",
+        "form_divers": "潜水员数量",
+        "form_non_divers": "非潜水员数量",
+        "form_special_requirements": "特殊要求",
+        "placeholder_full_name": "如护照上所示",
+        "placeholder_alias": "首选名称（可选）",
+        "placeholder_nationality": "选择您的国籍",
+        "placeholder_code": "选择代码",
+        "placeholder_contact": "电话号码",
+        "placeholder_date": "选择日期",
+        "placeholder_select": "选择",
+        "placeholder_requirements": "任何特殊要求、饮食限制或其他信息...",
+        "button_submit": "打开电子邮件发送查询",
+        "help_text_1": "点击按钮后，您的电子邮件客户端将打开预填充的邮件。",
+        "help_text_2": "请审阅并点击\"发送\"以完成您的预订查询。",
+        "validation_error": "请填写所有必填字段",
+        "date_error": "离开日期必须晚于抵达日期",
+        "success_title": "电子邮件客户端已打开！",
+        "success_description": "请审阅并发送预填充的电子邮件以完成您的预订查询。",
+        "booking_inquiry": "预订查询来自",
+        "email_header": "预订查询 - 西巴丹卡帕莱潜水度假村",
+        "section_personal": "个人信息：",
+        "section_booking": "预订详情：",
+        "section_requirements": "特殊要求：",
+        "email_footer": "此查询在以下时间通过网站提交",
+        "not_provided": "未提供",
+        "none": "无"
+      },
+      "footer": {
+        "sandakan_office": "山打根办公室",
+        "sandakan_address": "一楼，地段38和39，C区，班达坦，北路5英里，PPM 255 Elopura，90000山打根，沙巴，马来西亚。",
+        "tawau_office": "斗湖办公室",
+        "tawau_address": "1楼，第484号，P区，班达沙宾多，邮箱61120，91021斗湖，沙巴，马来西亚。",
+        "kk_office": "亚庇办公室",
+        "kk_address": "B区，1楼，Lot B-1-1，丹绒亚路购物广场，Mat Salleh街，丹绒亚路，88100亚庇，沙巴，马来西亚。",
+        "follow_us": "关注我们",
+        "follow_description": "体验位于沙巴山打根中心的终极水下天堂。",
+        "certifications": "认证",
+        "cert_padi": "PADI潜水度假村",
+        "cert_green_fins": "Green Fins 认证",
+        "cert_tripadvisor": "猫途鹰名人堂",
+        "cert_sabah_achievers": "沙巴顶级成就者",
+        "cert_sabah_tourism": "沙巴旅游奖",
+        "cert_sabah_association": "沙巴旅游协会",
+        "copyright": "© 2025 版权所有。"
+      },
+      "sipadan": {
+        "title": "卡帕莱度假村",
+        "description": "在我们独特的热带度假村体验天堂。原始海滩、清澈见底的海水和世界级设施在这个隐秘的岛屿庇护所等着您。",
+        "explore": "探索"
+      },
+      "pearl": {
+        "title": "珍珠岛度假村",
+        "description": "位于珍珠岛国家公园旁，这个新的豪华度假胜地提供无与伦比的冒险机会。登山欣赏群山、大海和天空的壮观全景，然后在您的热带仙本那天堂放松身心。",
+        "explore": "探索"
+      }
+    }
+  }
+}

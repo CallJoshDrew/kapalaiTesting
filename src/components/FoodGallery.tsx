@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 // Import food gallery images
 import asianDelights from "@/assets/food-gallery/1.png";
@@ -14,31 +15,35 @@ import greekSalad from "@/assets/food-gallery/8.png";
 import islandBites from "@/assets/food-gallery/9.png";
 import fourSeasons from "@/assets/food-gallery/10.png";
 
-const foodImages = [
-  { src: asianDelights, alt: "Asian Delights Sampler", title: "" },
-  // { src: seafoodPlatter, alt: "Gourmet Seafood Platter", title: "Fresh Seafood Selection" },
-  { src: chickenCheese, alt: "Chicken Cheese Combo", title: "" },
-  { src: seafoodAlfredo, alt: "Seafood Alfredo", title: "" },
-  { src: spicyStirFryCrab, alt: "Spicy Stir-Fry Crab", title: "" },
-  { src: glazedWings, alt: "Crispy Asian Glazed Wings", title: "" },
-  { src: grilledSataySkewers, alt: "Grilled Satay Skewers with Spicy Rice Cakes", title: "" },
-  { src: roastShank, alt: "BBQ Roast Shank", title: "" },
-  { src: greekSalad, alt: "Greek Salad", title: "" },
-  { src: islandBites, alt: "Sweet Island Bites", title: "" },
-  { src: fourSeasons, alt: "Four Seasons Dessert Plate", title: "" },
-];
-
 interface FoodGalleryProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState(0);
 
-  // Disable body scroll when gallery is open
+  const foodItemsData = t("services.food.gallery", { returnObjects: true }) as Array<{
+    alt: string;
+    title: string;
+  }>;
+
+  const foodImages = [
+    { src: asianDelights, ...foodItemsData?.[0] },
+    { src: chickenCheese, ...foodItemsData?.[1] },
+    { src: seafoodAlfredo, ...foodItemsData?.[2] },
+    { src: spicyStirFryCrab, ...foodItemsData?.[3] },
+    { src: glazedWings, ...foodItemsData?.[4] },
+    { src: grilledSataySkewers, ...foodItemsData?.[5] },
+    { src: roastShank, ...foodItemsData?.[6] },
+    { src: greekSalad, ...foodItemsData?.[7] },
+    { src: islandBites, ...foodItemsData?.[8] },
+    { src: fourSeasons, ...foodItemsData?.[9] },
+  ];
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -54,10 +59,6 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
     setCurrentImageIndex((prev) => (prev + 1) % foodImages.length);
   };
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + foodImages.length) % foodImages.length);
-  };
-
   const handleImageLoad = () => {
     setLoadedImages(prev => {
       const newCount = prev + 1;
@@ -68,7 +69,6 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
     });
   };
 
-  // Reset loading state when modal opens
   useEffect(() => {
     if (isOpen) {
       setIsLoading(true);
@@ -81,7 +81,6 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
   return (
     <div className="fixed inset-0 bg-black/90 z-[60] flex items-center justify-center">
       <div className="relative w-full h-full max-w-7xl mx-auto p-4">
-        {/* Loading Spinner */}
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center z-30">
             <div className="text-center">
@@ -93,7 +92,6 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
           </div>
         )}
         
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
@@ -101,9 +99,8 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
           <X className="h-6 w-6 text-black" />
         </button>
 
-        {/* Mobile View - Single Image with Navigation */}
+        {/* Mobile View */}
         <div className={`md:hidden w-full h-full flex flex-col justify-center items-center px-4 ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
-          {/* Image Title and Counter - 10px above image */}
           <div className="text-center mb-2">
             <h3 className="text-white text-lg font-semibold">
               {foodImages[currentImageIndex].title}
@@ -113,7 +110,6 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
             </p>
           </div>
           
-          {/* Image - centered */}
           <div className="flex-shrink-0 flex items-center justify-center">
             <img
               src={foodImages[currentImageIndex].src}
@@ -123,7 +119,6 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
             />
           </div>
           
-          {/* Next Button - 10px below image */}
           <div className="text-center mt-2">
             <Button
               onClick={nextImage}
@@ -131,14 +126,14 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
               size="lg"
               className="text-lg px-8 py-4"
             >
-              Next
+              {t("services.food.gallery_button")}
             </Button>
           </div>
         </div>
 
-        {/* Tablet View - 3 rows x 3 columns Grid Layout */}
+        {/* Tablet View - 3x3 Grid */}
         <div className={`hidden md:block lg:hidden ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
-          <h2 className="text-white text-3xl font-bold text-center mb-8">Our Food Gallery</h2>
+          <h2 className="text-white text-3xl font-bold text-center mb-8">{t("services.food.gallery_heading")}</h2>
           
           <div className="grid grid-cols-3 grid-rows-3 gap-4 max-h-[calc(100vh-200px)] overflow-y-auto">
             {foodImages.slice(0, 9).map((image, index) => (
@@ -163,9 +158,9 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
           </div>
         </div>
 
-        {/* Desktop View - 2 rows x 5 columns Grid Layout */}
+        {/* Desktop View - 5x2 Grid */}
         <div className={`hidden lg:block ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
-          <h2 className="text-white text-3xl font-bold text-center mb-8">Our Food Gallery</h2>
+          <h2 className="text-white text-3xl font-bold text-center mb-8">{t("services.food.gallery_heading")}</h2>
           
           <div className="grid grid-cols-5 grid-rows-2 gap-4 max-h-[calc(100vh-200px)] overflow-y-auto">
             {foodImages.slice(0, 10).map((image, index) => (

@@ -3,40 +3,25 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import tripAdvisorAward from "@/assets/awards/tripAdvisor2.png";
 import sabahTourismAward from "@/assets/awards/sabahTourism1.png";
 import sabahTopAchieversAward from "@/assets/awards/sabahTop1.png";
+import { useTranslation } from "react-i18next";
 
 const AwardsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
-
-  const awards = [
-    {
-      icon: Award,
-      title: "TripAdvisor Hall of Fame",
-      description: "Certificate of Excellence",
-      year: "2018",
-      image: tripAdvisorAward,
-    },
-    {
-      icon: Trophy,
-      title: "Sabah Tourism Award",
-      description: "Excellence in Hotel Services",
-      year: "2019",
-      image: sabahTourismAward,
-    },
-    {
-      icon: Star,
-      title: "Sabah Top Achievers",
-      description: "Outstanding Performance",
-      year: "2024",
-      image: sabahTopAchieversAward,
-    },
-  ];
+  const { t } = useTranslation();
+  const images = [tripAdvisorAward, sabahTourismAward, sabahTopAchieversAward];
+  // get items array from translations
+  const awards = t("awards.items", { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+    year: string;
+  }>;
 
   return (
     <section className="py-20 bg-gradient-to-br from-ocean-pearl to-background">
       <div className="container mx-auto px-4" ref={ref}>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-ocean-deep mb-4">35 Years of Service</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Three decades of prestigious recognition and unwavering commitment.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-ocean-deep mb-4">{t("awards.heading")}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("awards.subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-8xl mx-auto">
@@ -49,7 +34,7 @@ const AwardsSection = () => {
               }}>
               {/* Image on the left */}
               <img
-                src={award.image}
+                src={images[index]}
                 alt={`${award.title} award`}
                 className={`rounded-2xl object-contain mr-8 flex-shrink-0 transition-transform duration-300 group-hover:scale-110`}
                 style={{

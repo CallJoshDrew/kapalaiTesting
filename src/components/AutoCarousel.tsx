@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 interface AutoCarouselProps {
   children: React.ReactNode[];
@@ -7,6 +8,7 @@ interface AutoCarouselProps {
 }
 
 const AutoCarousel = ({ children, autoPlayInterval = 5000, showDots = true }: AutoCarouselProps) => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -63,7 +65,7 @@ const AutoCarousel = ({ children, autoPlayInterval = 5000, showDots = true }: Au
             onClick={nextSlide}
             className="bg-ocean-light text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-all duration-300 hover:bg-ocean-primary active:scale-95 focus:bg-ocean-primary"
           >
-            Next Review
+            {t("carousel.next_button")}
             <svg 
               className="w-5 h-5" 
               fill="none" 

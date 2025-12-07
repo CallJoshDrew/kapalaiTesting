@@ -11,6 +11,7 @@ import HolidaysSection from "@/components/sections/HolidaysSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import FacilitiesSection from "@/components/sections/FacilitiesSection";
 import ReviewsSection from "@/components/sections/ReviewsSection";
+import "@/i18n/config"; // ensure i18n is initialized
 
 const Index = () => {
   const { isPlaying, toggle, play } = useAudio("/sounds/ocean-wavesV1.mp3");
