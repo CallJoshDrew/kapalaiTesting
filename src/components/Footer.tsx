@@ -31,7 +31,7 @@ const Footer = () => {
                   (+60) 89-675999
                 </a>
                 <a href="tel:+60178927100" className="hover:underline transition-all duration-300 hover:scale-105">
-                  (+60) 17-892 7100 (caroline)
+                  (+60) 17-892 7100 (Caroline)
                 </a>
                 <a href="tel:+60178992700" className="hover:underline transition-all duration-300 hover:scale-105">
                   (+60) 17-899 2700 (Stella)
