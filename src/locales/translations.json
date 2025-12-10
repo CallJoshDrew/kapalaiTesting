@@ -70,16 +70,16 @@
           "gallery_button": "Next",
           "items": [{ "title": "BBQ Night" }, { "title": "Buffet Style" }, { "title": "Family Dinner" }, { "title": "Kapalai Chefs" }, { "title": "Service Staff" }],
           "gallery": [
-            { "alt": "Asian Delights Sampler", "title": "Asian Delights" },
-            { "alt": "Chicken Cheese Combo", "title": "Chicken Cheese" },
-            { "alt": "Seafood Alfredo", "title": "Seafood Alfredo" },
-            { "alt": "Spicy Stir-Fry Crab", "title": "Spicy Stir-Fry Crab" },
-            { "alt": "Crispy Asian Glazed Wings", "title": "Glazed Wings" },
-            { "alt": "Grilled Satay Skewers with Spicy Rice Cakes", "title": "Satay Skewers" },
-            { "alt": "BBQ Roast Shank", "title": "Roast Shank" },
-            { "alt": "Greek Salad", "title": "Greek Salad" },
-            { "alt": "Sweet Island Bites", "title": "Island Bites" },
-            { "alt": "Four Seasons Dessert Plate", "title": "Four Seasons Dessert" }
+            { "alt": "Singapore Chili Crab", "title": "Singapore Chili Crab" },
+            { "alt": "Lime Mayo Fried Shrimps", "title": "Lime Mayo Fried Shrimps" },
+            { "alt": "Chese Baked Cauliflower", "title": "Chese Baked Cauliflower" },
+            { "alt": "Tempura Vegetable", "title": "Tempura Vegetable" },
+            { "alt": "Stim Fish Slice Chinese Style", "title": "Stim Fish Slice Chinese Style" },
+            { "alt": "Roasted Duck", "title": "Roasted Duck" },
+            { "alt": "Teriyaki Chicken", "title": "Teriyaki Chicken" },
+            { "alt": "Aglio Olio Seafood Spaghetti", "title": "Aglio Olio Seafood Spaghetti" },
+            { "alt": "Grill Local Tuna", "title": "Grill Local Tuna" },
+            { "alt": "Slow Roast Quater Lamb Shoulder", "title": "Slow Roast Quater Lamb Shoulder" }
           ]
         }
       },
@@ -356,16 +356,16 @@
           "gallery_button": "下一页",
           "items": [{ "title": "烧烤之夜" }, { "title": "自助餐" }, { "title": "家庭晚餐" }, { "title": "卡帕莱主厨" }, { "title": "服务员" }],
           "gallery": [
-            { "alt": "亚洲美食拼盘", "title": "亚洲美食" },
-            { "alt": "鸡肉芝士组合", "title": "鸡肉芝士" },
-            { "alt": "海鲜奶油意面", "title": "海鲜奶油意面" },
-            { "alt": "辛辣炒螃蟹", "title": "辛辣炒螃蟹" },
-            { "alt": "脆香亚洲釉鸡翅", "title": "釉鸡翅" },
-            { "alt": "烤沙爹串和辛辣米饼", "title": "沙爹串" },
-            { "alt": "烧烤羊腿", "title": "羊腿" },
-            { "alt": "希腊沙拉", "title": "希腊沙拉" },
-            { "alt": "甜蜜的岛屿小食", "title": "岛屿小食" },
-            { "alt": "四季甜品拼盘", "title": "四季甜品" }
+            { "alt": "新加坡辣椒蟹", "title": "新加坡辣椒蟹"},
+            { "alt": "青柠蛋黄酱炸虾", "title": "青柠蛋黄酱炸虾"},
+            { "alt": "奶酪烤花椰菜", "title": "奶酪烤花椰菜"},
+            { "alt": "天妇罗蔬菜",  "title": "天妇罗蔬菜"},
+            { "alt": "中式清蒸鱼片", "title": "中式清蒸鱼片"},
+            { "alt": "烤鸭", "title": "烤鸭" },
+            { "alt": "照烧鸡", "title": "照烧鸡"},
+            { "alt": "蒜香海鲜意面", "title": "蒜香海鲜意面"},
+            { "alt": "烤本地金枪鱼", "title": "烤本地金枪鱼"},
+            { "alt": "慢烤四分之一羊肩", "title": "慢烤四分之一羊肩"}
           ]
         }
       },

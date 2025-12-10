@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 
 // Import food gallery images
-import asianDelights from "@/assets/food-gallery/1.png";
-import chickenCheese from "@/assets/food-gallery/2.png";
-import seafoodAlfredo from "@/assets/food-gallery/3.png";
-import spicyStirFryCrab from "@/assets/food-gallery/4.png";
-import glazedWings from "@/assets/food-gallery/5.png";
-import grilledSataySkewers from "@/assets/food-gallery/6.png";
-import roastShank from "@/assets/food-gallery/7.png";
-import greekSalad from "@/assets/food-gallery/8.png";
-import islandBites from "@/assets/food-gallery/9.png";
-import fourSeasons from "@/assets/food-gallery/10.png";
+import food1 from "@/assets/food-gallery/1.png";
+import food2 from "@/assets/food-gallery/2.png";
+import food3 from "@/assets/food-gallery/3.png";
+import food4 from "@/assets/food-gallery/4.png";
+import food5 from "@/assets/food-gallery/5.png";
+import food6 from "@/assets/food-gallery/6.png";
+import food7 from "@/assets/food-gallery/7.png";
+import food8 from "@/assets/food-gallery/8.png";
+import food9 from "@/assets/food-gallery/9.png";
+import food10 from "@/assets/food-gallery/10.png";
 
 interface FoodGalleryProps {
   isOpen: boolean;
@@ -32,16 +32,16 @@ const FoodGallery = ({ isOpen, onClose }: FoodGalleryProps) => {
   }>;
 
   const foodImages = [
-    { src: asianDelights, ...foodItemsData?.[0] },
-    { src: chickenCheese, ...foodItemsData?.[1] },
-    { src: seafoodAlfredo, ...foodItemsData?.[2] },
-    { src: spicyStirFryCrab, ...foodItemsData?.[3] },
-    { src: glazedWings, ...foodItemsData?.[4] },
-    { src: grilledSataySkewers, ...foodItemsData?.[5] },
-    { src: roastShank, ...foodItemsData?.[6] },
-    { src: greekSalad, ...foodItemsData?.[7] },
-    { src: islandBites, ...foodItemsData?.[8] },
-    { src: fourSeasons, ...foodItemsData?.[9] },
+    { src: food1, ...foodItemsData?.[0] },
+    { src: food2, ...foodItemsData?.[1] },
+    { src: food3, ...foodItemsData?.[2] },
+    { src: food4, ...foodItemsData?.[3] },
+    { src: food5, ...foodItemsData?.[4] },
+    { src: food6, ...foodItemsData?.[5] },
+    { src: food7, ...foodItemsData?.[6] },
+    { src: food8, ...foodItemsData?.[7] },
+    { src: food9, ...foodItemsData?.[8] },
+    { src: food10, ...foodItemsData?.[9] },
   ];
 
   useEffect(() => {
